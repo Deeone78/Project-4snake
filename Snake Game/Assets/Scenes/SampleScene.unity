@@ -640,6 +640,7 @@ MonoBehaviour:
   _direction: {x: 1, y: 0}
   snakePart: {fileID: 205792153317448944, guid: 6a9cccb4c54ccbe42841f18e4ffed932, type: 3}
   playAgain: {fileID: 778766528}
+  snakeSizeBeta: 3
 --- !u!61 &956740924
 BoxCollider2D:
   m_ObjectHideFlags: 0

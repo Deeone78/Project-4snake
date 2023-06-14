@@ -12,7 +12,8 @@ public class Snake : MonoBehaviour
     private List<Transform> _segments;
     public Transform snakePart;
     public GameObject playAgain;
-    int snakeSize;
+    int snakeSize=3;
+    //public int snakeSizeBeta;
     //Stopped at 43:47
     private void Start()
     {
@@ -25,16 +26,23 @@ public class Snake : MonoBehaviour
     public void StartGame()
     {
         playAgain.SetActive(false);
+        //snakeSize = snakeSizeBeta;
         Time.timeScale = 1.0f;
         for (int i = 1; i <_segments.Count; i++)
         {
             Destroy(_segments[i].gameObject);
         }
         _segments.Clear();
+     
         _segments.Add(this.transform);
 
         this.transform.position = Vector3.zero;
+          for (int i = 1; i<this.snakeSize; i++)
+       {
 
+           _segments.Add(Instantiate(this.snakePart));
+       }
+       
     }
     // Update is called once per frame
     void Update()
