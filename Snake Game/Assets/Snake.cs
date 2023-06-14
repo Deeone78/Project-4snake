@@ -11,14 +11,31 @@ public class Snake : MonoBehaviour
     public Vector2 _direction = Vector2.right;
     private List<Transform> _segments;
     public Transform snakePart;
-
+    public GameObject playAgain;
+    int snakeSize;
+    //Stopped at 43:47
     private void Start()
     {
+        Time.timeScale = 0;
         _segments = new List<Transform>();
         _segments.Add(this.transform);
+        playAgain.SetActive(true);
 
     }
+    public void StartGame()
+    {
+        playAgain.SetActive(false);
+        Time.timeScale = 1.0f;
+        for (int i = 1; i <_segments.Count; i++)
+        {
+            Destroy(_segments[i].gameObject);
+        }
+        _segments.Clear();
+        _segments.Add(this.transform);
 
+        this.transform.position = Vector3.zero;
+
+    }
     // Update is called once per frame
     void Update()
     {
@@ -38,23 +55,47 @@ public class Snake : MonoBehaviour
             _direction = Vector2.right;
             speedX = 100f;
         }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            _direction = Vector2.up;
+            speedY = -100f;
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            _direction = Vector2.down;
+            speedY = 100f;
+        }
+
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            _direction = Vector2.left;
+            speedX = -100f;
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            _direction = Vector2.right;
+            speedX = 100f;
+        }
         else {
 
             speedX = 0;
             speedY = 0;
         }
     }
-    private void FixedUpdate() { 
-        
-        for(int i = _segments.Count - 1;i>0;i--)
+    private void FixedUpdate()
+    {
+
+        for (int i = _segments.Count - 1; i > 0; i--)
         {
-        
-        {
-            this.transform.position = new Vector3    (
-                Mathf.Round(this.transform.position.x)+_direction.x,
-                Mathf.Round(this.transform.position.y)+_direction.y,
-                0.0f
+            _segments[i].position = _segments[i - 1].position;
+        }
+        this.transform.position = new Vector3(
+           Mathf.Round(this.transform.position.x) + _direction.x,
+           Mathf.Round(this.transform.position.y) + _direction.y,
+           0.0f
             );
+        
+
     }
     private void Grow()
     {
@@ -62,6 +103,15 @@ public class Snake : MonoBehaviour
         segment.position = _segments[_segments.Count - 1].position;
         _segments.Add(segment);
     }
+
+    private void Endgame()
+    {
+        Time.timeScale = 0.0f;
+        playAgain.SetActive(true);
+
+    }
+
+
     private void OnTriggerEnter2D(Collider2D other)
     {
 
@@ -69,7 +119,11 @@ public class Snake : MonoBehaviour
         {
             Grow();
         }
+        else if (other.tag == "Obstacle")
+        {
+            Endgame();
 
+        }
 
     }
 }
