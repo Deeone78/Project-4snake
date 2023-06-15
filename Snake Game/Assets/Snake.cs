@@ -13,8 +13,12 @@ public class Snake : MonoBehaviour
     public Transform snakePart;
     public GameObject playAgain;
     int snakeSize=3;
+    bool noDown = true;
+    bool noUp = true;
+    bool noright = true;
+    bool noLeft = true;
     //public int snakeSizeBeta;
-    //Stopped at 43:47
+    //Stopped at NODOWN
     private void Start()
     {
         Time.timeScale = 0;
@@ -38,10 +42,10 @@ public class Snake : MonoBehaviour
 
         this.transform.position = Vector3.zero;
           for (int i = 1; i<this.snakeSize; i++)
-       {
+          {
 
            _segments.Add(Instantiate(this.snakePart));
-       }
+          }
        
     }
     // Update is called once per frame
@@ -50,6 +54,7 @@ public class Snake : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W)) {
             _direction = Vector2.up;
             speedY = -100f;
+
         } else if (Input.GetKeyDown(KeyCode.S)) {
             _direction = Vector2.down;
             speedY = 100f;
