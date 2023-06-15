@@ -15,18 +15,20 @@ public class Snake : MonoBehaviour
     int snakeSize=3;
     bool noDown = true;
     bool noUp = true;
-    bool noright = true;
+    bool noRight = true;
     bool noLeft = true;
     //public int snakeSizeBeta;
     //Stopped at NODOWN
+
     private void Start()
     {
         Time.timeScale = 0;
         _segments = new List<Transform>();
-        _segments.Add(this.transform);
+        _segments.Add(transform);
         playAgain.SetActive(true);
 
     }
+
     public void StartGame()
     {
         playAgain.SetActive(false);
@@ -37,62 +39,98 @@ public class Snake : MonoBehaviour
             Destroy(_segments[i].gameObject);
         }
         _segments.Clear();
-     
-        _segments.Add(this.transform);
+        
+        _segments.Add(transform);
 
-        this.transform.position = Vector3.zero;
-          for (int i = 1; i<this.snakeSize; i++)
-          {
-
-           _segments.Add(Instantiate(this.snakePart));
-          }
-       
+        transform.position = Vector3.zero;
+        for (int i = 1; i<snakeSize; i++)
+        {
+            _segments.Add(Instantiate(snakePart));
+        } 
     }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W)) {
-            _direction = Vector2.up;
-            speedY = -100f;
+        if (noRight == true) 
+        {
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                _direction = Vector2.up;
 
-        } else if (Input.GetKeyDown(KeyCode.S)) {
-            _direction = Vector2.down;
-            speedY = 100f;
+                noDown = false;
+                noUp = true;
+                noRight = true;
+                noLeft = true;
+            }
         }
+        else if (noDown == true) 
+        {
+            if (Input.GetKeyDown(KeyCode.S)) {
+                _direction = Vector2.down;
 
+                noDown = true;
+                noUp = false;
+                noRight = true;
+                noLeft = true;
+            }
+        }
         else if (Input.GetKeyDown(KeyCode.A)) {
             _direction = Vector2.left;
-            speedX = -100f;
+
+            noDown = true;
+            noUp = true;
+            noRight = true;
+            noLeft = false;
         }
         else if (Input.GetKeyDown(KeyCode.D)) {
             _direction = Vector2.right;
-            speedX = 100f;
+
+            noDown = true;
+            noUp = true;
+            noRight = false;
+            noLeft = true;
         }
+            
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             _direction = Vector2.up;
-            speedY = -100f;
+            
+            noDown = false;
+            noUp = true;
+            noRight = true;
+            noLeft = true;
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             _direction = Vector2.down;
-            speedY = 100f;
+            
+            noDown = true;
+            noUp = false;
+            noRight = true;
+            noLeft = true;
         }
-
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             _direction = Vector2.left;
-            speedX = -100f;
+           
+            noDown = true;
+            noUp = true;
+            noRight = false;
+            noLeft = true;
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             _direction = Vector2.right;
-            speedX = 100f;
+            
+            noDown = true;
+            noUp = true;
+            noRight = true;
+            noLeft = false;
         }
         else {
 
-            speedX = 0;
-            speedY = 0;
+            
         }
     }
     private void FixedUpdate()
