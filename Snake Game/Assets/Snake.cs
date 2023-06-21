@@ -12,15 +12,15 @@ public class Snake : MonoBehaviour
     private List<Transform> _segments;
     public Transform snakePart;
     public GameObject playAgain;
-    int snakeSize=3;
+    int snakeSize=2;
     bool noDown = true;
     bool noUp = true;
     bool noRight = true;
-    bool noLeft = true;
-    public Transform snakeHead; 
+    bool noLeft = false;
+    public Transform snakeHead;
     //public int snakeSizeBeta;
     //Stopped at NODOWN
-
+    bool startLock = false;
     private void Start()
     {
         Time.timeScale = 0;
@@ -33,6 +33,7 @@ public class Snake : MonoBehaviour
     public void StartGame()
     {
         playAgain.SetActive(false);
+        startLock = true;
         //snakeSize = snakeSizeBeta;
         Time.timeScale = 1.0f;
         for (int i = 1; i <_segments.Count; i++)
@@ -42,6 +43,8 @@ public class Snake : MonoBehaviour
         _segments.Clear();
         
         _segments.Add(transform);
+
+
 
         transform.position = Vector3.zero;
         for (int i = 1; i<snakeSize; i++)
@@ -53,85 +56,152 @@ public class Snake : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (noRight == true) 
+        if (startLock == true)
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (noRight == false)
             {
-                _direction = Vector2.up;
-              //  snakeHead transform.rotation = (0,0,-90);
-                noDown = false;
-                noUp = true;
-                noRight = true;
-                noLeft = true;
+
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    _direction = Vector2.up;
+                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, -90);
+                    noDown = false;
+                    noUp = true;
+                    noRight = true;
+                    noLeft = true;
+                }
+                else if (Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    _direction = Vector2.down;
+                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, 90);
+                    noDown = true;
+                    noUp = false;
+                    noRight = true;
+                    noLeft = true;
+                }
+
+
             }
-        }
-        else if (noDown == true) 
-        {
-            if (Input.GetKeyDown(KeyCode.S)) {
-                _direction = Vector2.down;
+            else if (noLeft == false)
+            {
 
-                noDown = true;
-                noUp = false;
-                noRight = true;
-                noLeft = true;
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    _direction = Vector2.up;
+                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, -90);
+                    noDown = false;
+                    noUp = true;
+                    noRight = true;
+                    noLeft = true;
+                }
+                else if (Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    _direction = Vector2.down;
+                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, 90);
+                    noDown = true;
+                    noUp = false;
+                    noRight = true;
+                    noLeft = true;
+                }
+
+
             }
-        }
-        else if (Input.GetKeyDown(KeyCode.A)) {
-            _direction = Vector2.left;
+            else if (noDown == false)
+            {
 
-            noDown = true;
-            noUp = true;
-            noRight = true;
-            noLeft = false;
-        }
-        else if (Input.GetKeyDown(KeyCode.D)) {
-            _direction = Vector2.right;
 
-            noDown = true;
-            noUp = true;
-            noRight = false;
-            noLeft = true;
-        }
-            
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            _direction = Vector2.up;
-            
-            noDown = false;
-            noUp = true;
-            noRight = true;
-            noLeft = true;
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            _direction = Vector2.down;
-            
-            noDown = true;
-            noUp = false;
-            noRight = true;
-            noLeft = true;
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            _direction = Vector2.left;
-           
-            noDown = true;
-            noUp = true;
-            noRight = false;
-            noLeft = true;
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            _direction = Vector2.right;
-            
-            noDown = true;
-            noUp = true;
-            noRight = true;
-            noLeft = false;
-        }
-        else {
 
-            
+                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    _direction = Vector2.left;
+                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    noDown = true;
+                    noUp = true;
+                    noRight = false;
+                    noLeft = true;
+                }
+                else if (Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    _direction = Vector2.right;
+                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, 180);
+                    noDown = true;
+                    noUp = true;
+                    noRight = true;
+                    noLeft = false;
+                }
+            }
+
+
+            else if (noUp == false)
+            {
+
+
+                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    _direction = Vector2.left;
+                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    noDown = true;
+                    noUp = true;
+                    noRight = false;
+                    noLeft = true;
+                }
+                else if (Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    _direction = Vector2.right;
+                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, 180);
+                    noDown = true;
+                    noUp = true;
+                    noRight = true;
+                    noLeft = false;
+                }
+            }
+
+            /*
+         if (noRight == true) 
+         {
+
+             if (Input.GetKeyDown(KeyCode.W))
+             {
+                 _direction = Vector2.up;
+               //  snakeHead transform.rotation = (0,0,-90);
+                 noDown = false;
+                 noUp = true;
+                 noRight = true;
+                 noLeft = true;
+             }
+         }
+         else if (noDown == true) 
+         {
+             if (Input.GetKeyDown(KeyCode.S)) {
+                 _direction = Vector2.down;
+
+                 noDown = true;
+                 noUp = false;
+                 noRight = true;
+                 noLeft = true;
+             }
+         }
+         else if (Input.GetKeyDown(KeyCode.A)) {
+             _direction = Vector2.left;
+
+             noDown = true;
+             noUp = true;
+             noRight = true;
+             noLeft = false;
+         }
+         else if (Input.GetKeyDown(KeyCode.D)) {
+             _direction = Vector2.right;
+
+             noDown = true;
+             noUp = true;
+             noRight = false;
+             noLeft = true;
+         }
+           */
+        }
+        else
+        {
+
         }
     }
     private void FixedUpdate()
