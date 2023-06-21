@@ -17,6 +17,7 @@ public class Snake : MonoBehaviour
     bool noUp = true;
     bool noRight = true;
     bool noLeft = true;
+    public Transform snakeHead; 
     //public int snakeSizeBeta;
     //Stopped at NODOWN
 
@@ -57,7 +58,7 @@ public class Snake : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.W))
             {
                 _direction = Vector2.up;
-
+              //  snakeHead transform.rotation = (0,0,-90);
                 noDown = false;
                 noUp = true;
                 noRight = true;
