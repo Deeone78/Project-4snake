@@ -64,7 +64,7 @@ public class Snake : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
                     _direction = Vector2.up;
-                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, -90);
+                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, 0);
                     noDown = false;
                     noUp = true;
                     noRight = true;
@@ -73,7 +73,7 @@ public class Snake : MonoBehaviour
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
                     _direction = Vector2.down;
-                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, 90);
+                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, 180);
                     noDown = true;
                     noUp = false;
                     noRight = true;
@@ -88,7 +88,7 @@ public class Snake : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
                     _direction = Vector2.up;
-                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, -90);
+                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, 0);
                     noDown = false;
                     noUp = true;
                     noRight = true;
@@ -97,11 +97,15 @@ public class Snake : MonoBehaviour
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
                     _direction = Vector2.down;
-                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, 90);
+                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, 180);
                     noDown = true;
                     noUp = false;
                     noRight = true;
                     noLeft = true;
+                }
+                else
+                {
+                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, -90);
                 }
 
 
@@ -114,7 +118,7 @@ public class Snake : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
                     _direction = Vector2.left;
-                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, 90);
                     noDown = true;
                     noUp = true;
                     noRight = false;
@@ -123,7 +127,7 @@ public class Snake : MonoBehaviour
                 else if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
                     _direction = Vector2.right;
-                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, 180);
+                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, -90);
                     noDown = true;
                     noUp = true;
                     noRight = true;
@@ -139,7 +143,7 @@ public class Snake : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
                     _direction = Vector2.left;
-                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, 90);
                     noDown = true;
                     noUp = true;
                     noRight = false;
@@ -148,7 +152,7 @@ public class Snake : MonoBehaviour
                 else if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
                     _direction = Vector2.right;
-                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, 180);
+                    snakeHead.transform.rotation = Quaternion.Euler(0, 0, -90);
                     noDown = true;
                     noUp = true;
                     noRight = true;
@@ -230,6 +234,7 @@ public class Snake : MonoBehaviour
     {
         Time.timeScale = 0.0f;
         playAgain.SetActive(true);
+        startLock = false;
 
     }
 

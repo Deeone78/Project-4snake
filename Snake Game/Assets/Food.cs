@@ -5,9 +5,11 @@ using UnityEngine;
 public class Food : MonoBehaviour
 {
     // Start is called before the first frame update
-    public BoxCollider2D gridArea;
+    BoxCollider2D gridArea;
+
     private void Start()
     {
+        gridArea = GameObject.Find("GridArea").GetComponent<BoxCollider2D>();
         RandomizePostion();
     }
 
