@@ -207,6 +207,7 @@ public class Snake : MonoBehaviour
         {
 
         }
+      //  string hajgds = snakeSize.ToString();
     }
     private void FixedUpdate()
     {
