@@ -7,6 +7,7 @@ public class Snake : MonoBehaviour
     // Start is called before the first frame update
     private float speedY = 0;
     private float speedX = 0;
+    public GameObject blackCanvas ;
     public static float fixedTimeStep = 0.02f;
     public Vector2 _direction = Vector2.right;
     private List<Transform> _segments;
@@ -14,6 +15,7 @@ public class Snake : MonoBehaviour
     public GameObject playAgain;
     int snakeSize=2;
     bool noDown = true;
+    public GameObject optionB; 
     bool noUp = true;
     bool noRight = true;
     bool noLeft = false;
@@ -33,6 +35,8 @@ public class Snake : MonoBehaviour
     public void StartGame()
     {
         playAgain.SetActive(false);
+        blackCanvas.SetActive(false);
+
         startLock = true;
         //snakeSize = snakeSizeBeta;
         Time.timeScale = 1.0f;
@@ -239,7 +243,13 @@ public class Snake : MonoBehaviour
 
     }
 
+    public void OptionScreen()
+    {
 
+        blackCanvas.SetActive(true);
+
+
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
 

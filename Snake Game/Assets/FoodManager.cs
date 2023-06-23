@@ -2,11 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class FoodManager : MonoBehaviour
 {
-    public TMP_Text inputField;
+    public Text inputField;
     //private int numApples;
     public GameObject food;
     List<GameObject> foodList = new List<GameObject>();
@@ -25,15 +25,24 @@ public class FoodManager : MonoBehaviour
 
     public void SpawnApples()
     {
-        // int toSpawn = int.ToSting(inputField.text);
-        int toSpawn = Convert.ToInt32(inputField);
-        //  string hajgds = snakeSize.ToString();
+        int toSpawn = 10;
 
+        try {
+            toSpawn = Convert.ToInt32(inputField.text);
+        } catch (System.Exception e) {
+            Create(10);
+            return;
+        }
+
+        Create(toSpawn);
+    }
+
+    void Create(int count) {
         for (int i = 0; i < foodList.Count; i++) {
             Destroy(foodList[i]);
         }
 
-        for (int i = 0; i < toSpawn; i++) {
+        for (int i = 0; i < count; i++) {
             foodList.Add(Instantiate(food));
         }
     }
