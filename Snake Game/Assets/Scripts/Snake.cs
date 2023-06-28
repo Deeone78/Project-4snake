@@ -8,7 +8,7 @@ public class Snake : MonoBehaviour
     private float speedY = 0;
     private float speedX = 0;
     public GameObject blackCanvas ;
-    public static float fixedTimeStep = 0.02f;
+    static float fixedTimeStep = 2f;
     public Vector2 _direction = Vector2.right;
     private List<Transform> _segments;
     public Transform snakePart;
@@ -30,6 +30,7 @@ public class Snake : MonoBehaviour
         _segments.Add(transform);
         playAgain.SetActive(true);
         blackCanvas.SetActive(false);
+        
 
     }
 
@@ -37,6 +38,7 @@ public class Snake : MonoBehaviour
     {
         playAgain.SetActive(false);
         blackCanvas.SetActive(false);
+        optionB.SetActive(false);
 
         startLock = true;
         //snakeSize = snakeSizeBeta;
@@ -241,6 +243,7 @@ public class Snake : MonoBehaviour
         Time.timeScale = 0.0f;
         playAgain.SetActive(true);
         startLock = false;
+        optionB.SetActive(true);
 
     }
 
