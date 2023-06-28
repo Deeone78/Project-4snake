@@ -29,6 +29,7 @@ public class Snake : MonoBehaviour
         _segments = new List<Transform>();
         _segments.Add(transform);
         playAgain.SetActive(true);
+        blackCanvas.SetActive(false);
 
     }
 
