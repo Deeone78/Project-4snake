@@ -152,7 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de52a1ceadc15354387d460686a7004e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   inputField: {fileID: 844853984}
+=======
+  inputField: {fileID: 1043090167}
+>>>>>>> parent of b1e6df8 (4rr4re4w)
   food: {fileID: 3893125229131472095, guid: af08a67a76d5cdd4ebafaa2a7c2e07f2, type: 3}
 --- !u!4 &8308944
 Transform:
@@ -201,25 +205,42 @@ RectTransform:
   m_Father: {fileID: 472347319}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 37.8, y: 0}
   m_SizeDelta: {x: 377.66, y: 49.8844}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &81703721
+=======
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.000015258789, y: 0.0000038146973}
+  m_SizeDelta: {x: 0.000015259, y: -0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &41513895
+>>>>>>> parent of b1e6df8 (4rr4re4w)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 81703719}
+=======
+  m_GameObject: {fileID: 41513893}
+>>>>>>> parent of b1e6df8 (4rr4re4w)
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
+<<<<<<< HEAD
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+=======
+  m_Color: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 0.5}
+>>>>>>> parent of b1e6df8 (4rr4re4w)
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -228,6 +249,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
     m_FontSize: 44
     m_FontStyle: 0
     m_BestFit: 0
@@ -241,15 +263,35 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 10
 --- !u!222 &81703722
+=======
+    m_FontSize: 85
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 144
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 10
+--- !u!222 &41513896
+>>>>>>> parent of b1e6df8 (4rr4re4w)
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 81703719}
   m_CullTransparentMesh: 1
 =======
 >>>>>>> parent of 0c600e9 (Got it working)
+=======
+  m_GameObject: {fileID: 41513893}
+  m_CullTransparentMesh: 1
+>>>>>>> parent of b1e6df8 (4rr4re4w)
 --- !u!1 &241685801
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,15 +561,24 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.439343, y: 3.439343, z: 3.439343}
   m_Children:
+<<<<<<< HEAD
   - {fileID: 81703720}
+=======
+  - {fileID: 41513894}
+>>>>>>> parent of b1e6df8 (4rr4re4w)
   - {fileID: 1043090166}
   m_Father: {fileID: 454097484}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
   m_AnchoredPosition: {x: -120.66332, y: -204}
   m_SizeDelta: {x: 34.4693, y: 14.505}
+=======
+  m_AnchoredPosition: {x: 312.58838, y: -86.569336}
+  m_SizeDelta: {x: 297.5776, y: 98.2867}
+>>>>>>> parent of b1e6df8 (4rr4re4w)
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &472347320
 MonoBehaviour:
@@ -571,7 +622,11 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 472347321}
   m_TextComponent: {fileID: 1043090167}
+<<<<<<< HEAD
   m_Placeholder: {fileID: 0}
+=======
+  m_Placeholder: {fileID: 41513895}
+>>>>>>> parent of b1e6df8 (4rr4re4w)
   m_ContentType: 0
   m_InputType: 0
   m_AsteriskChar: 42
@@ -1472,7 +1527,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+<<<<<<< HEAD
 --- !u!1 &1005702194
+=======
+--- !u!1 &1043090165
+>>>>>>> parent of b1e6df8 (4rr4re4w)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1480,9 +1539,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 1005702195}
   - component: {fileID: 1005702197}
   - component: {fileID: 1005702196}
+=======
+  - component: {fileID: 1043090166}
+  - component: {fileID: 1043090168}
+  - component: {fileID: 1043090167}
+>>>>>>> parent of b1e6df8 (4rr4re4w)
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1490,17 +1555,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!224 &1005702195
+=======
+--- !u!224 &1043090166
+>>>>>>> parent of b1e6df8 (4rr4re4w)
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1005702194}
+=======
+  m_GameObject: {fileID: 1043090165}
+>>>>>>> parent of b1e6df8 (4rr4re4w)
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+<<<<<<< HEAD
   m_Father: {fileID: 778766529}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1517,12 +1591,27 @@ RectTransform:
 >>>>>>> parent of 0c600e9 (Got it working)
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1005702196
+=======
+  m_Father: {fileID: 472347319}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -0.5}
+  m_SizeDelta: {x: -20, y: -13}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1043090167
+>>>>>>> parent of b1e6df8 (4rr4re4w)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1005702194}
+=======
+  m_GameObject: {fileID: 1043090165}
+>>>>>>> parent of b1e6df8 (4rr4re4w)
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
@@ -1543,6 +1632,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
+<<<<<<< HEAD
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1551,12 +1641,26 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: Play
 --- !u!222 &1005702197
+=======
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1043090168
+>>>>>>> parent of b1e6df8 (4rr4re4w)
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1005702194}
+=======
+  m_GameObject: {fileID: 1043090165}
+>>>>>>> parent of b1e6df8 (4rr4re4w)
   m_CullTransparentMesh: 1
 --- !u!1 &1059006664
 GameObject:
