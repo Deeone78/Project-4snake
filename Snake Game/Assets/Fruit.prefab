@@ -94,6 +94,8 @@ GameObject:
   - component: {fileID: 3893125229131472089}
   - component: {fileID: 3893125229131472088}
   - component: {fileID: 3893125229131472091}
+  - component: {fileID: -435815602766388880}
+  - component: {fileID: -90560301757056081}
   m_Layer: 0
   m_Name: Fruit
   m_TagString: Food
@@ -205,4 +207,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c447e98a50765648be52dba861a8c04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridArea: {fileID: 0}
+--- !u!50 &-435815602766388880
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3893125229131472095}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &-90560301757056081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3893125229131472095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd988a00a1522dd4cb1776920f059a84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
